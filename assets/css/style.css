@@ -82,7 +82,6 @@ a{
 }
 img{
   height: auto;
-  width: 100%;
 }
 input,
 button{
@@ -138,7 +137,31 @@ body{
 /*-----------------------------------*\
   #REUSED STYLE
 \*-----------------------------------*/
+.search-wrapper::before{
+  position: absolute;
+  top: 14px;
+  right: 12px;
+  content: "";
+  width: 20px;
+  height: 20pc;
+  border: 3px solid var(--white);
+  border-radius: var(--radius-24);
+  border-inline-end: transparent;
+  animation: loading 500ms linear infinite;
+  display: none;
+}
+.search-wrapper.searching::before{
+  display: block;
+}
 
+@keyframes loading{
+  0%{
+    transform: rotate(0);
+  }
+  100%{
+    transform: rotate(1turn);
+  }
+}
 
 
 
@@ -146,11 +169,85 @@ body{
 /*-----------------------------------*\
   #HEADER
 \*-----------------------------------*/
+.header{
+  position: relative;
+  padding-block: 1.5em;
+  padding-inline: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
 
-
-
-
-
+.header .logo {
+  margin-inline-end: auto;
+}
+.search-btn,
+.menu-btn{
+  padding: .8em;
+}
+.search-btn{
+  background-color:var(--banner-background);
+  border-radius: var(--radius-8);
+}
+.search-btn img{
+  opacity: .5;
+  transition: var(--transition-short);
+}
+.search-btn:is(:hover, :focus-visible) img{
+  opacity: 1;
+}
+.menu-btn.active .menu,
+.menu-btn .close{
+  display: none;
+}
+.menu-btn .menu,
+.menu-btn.active .close{
+  display: block;
+}
+.search-btn{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:var(--background);
+  padding: 1.5em 1em;
+  display: flex;
+  gap: 8px;
+  z-index: 1;
+  display: none;
+}
+.search-btn.active {
+  display: flex;
+}
+.search-field{
+  background-color: var(--banner-background);
+  height: 48px;
+  line-height: 48pc;
+  padding-inline: 44px 16px;
+  outline: none;
+  border-radius: var(--radius-8);
+  transition: var(--fs-body)var(--transition-short);
+}
+.search-field::placeholder{
+  color: var(--on-surface-variant);
+}
+.search-field:hover{
+  box-shadow: 0 0 0 2px var(--on-surface-variant);
+  padding-inline-start: 16px;
+}
+.search-wrapper .leading-icon{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 12px;
+  opacity: .5;
+  transition: var(--transition-short);
+}
+.search-wrapper:focus-within .leading-icon{
+  opacity: 0;
+}
 /*-----------------------------------*\
   #SIDEBAR
 \*-----------------------------------*/
