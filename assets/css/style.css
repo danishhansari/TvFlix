@@ -75,6 +75,7 @@ span,
 iframe,
 button{
   display: block;
+  user-select: none;
 }
 a{
   color: inherit;
@@ -166,7 +167,7 @@ body{
 .title-large,
 .title{
   font-weight: var(--weight-bold);
-  letter-spacing: .5px;
+  letter-spacing: 0.5px;
 }
 
 .title{
@@ -180,6 +181,7 @@ body{
 }
 .title-large{
   font-size: var(--fs-title-lg);
+  font-weight: var(--weight-bold);
 }
 .img-cover{
   width: 100%;
@@ -215,7 +217,7 @@ body{
 }
 .poster-box {
   background: url('../images/poster-bg-icon.png');
-  aspect-ratio: 2/3;
+  aspect-ratio: 2 / 3;
 }
 .poster-box,
 .video-card{
@@ -314,7 +316,6 @@ body{
   opacity: 0;
 }
 
-
 /*-----------------------------------*\
   #SIDEBAR
 \*-----------------------------------*/
@@ -326,7 +327,7 @@ body{
   left: 0;
   max-width: 340px;
   width: 100%;
-  border-block-start: 1px solid --banner-background;
+  border-block-start: 1px solid var(--banner-background);
   overflow-y: overlay;
   z-index: 4;
   visibility: hidden;
@@ -370,7 +371,7 @@ body{
   margin-block-end: 8px;
 }
 .sidebar-footer{
-  border-block-start: 1px solid --banner-background;
+  border-block-start: 1px solid var(--banner-background);
   padding-block-start: 28px;
   margin-block-start: 16px;
 }
@@ -394,7 +395,7 @@ body{
   z-index: 3;
 }
 .overlay.active{
-  opacity: .5;
+  opacity: 0.5;
   pointer-events: all;
 }
 
@@ -417,7 +418,7 @@ body{
   left: 0;
   width: 100%;
   height: 150px;
-  background-image: linear-gradient(--bottom-overlay);
+  background-image: linear-gradient(var(--bottom-overlay));
   z-index: 1;
   pointer-events: none;
 }
@@ -447,7 +448,7 @@ body{
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(--banner-overlay);
+    background: linear-gradient(var(--banner-overlay));
   }
   .banner-slider .active{
     left: 0;
@@ -467,7 +468,7 @@ body{
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-  .banner .{
+  .banner .heading{
     --webkit-line-clamp:3;
     margin-block-end: 16px;
   }
