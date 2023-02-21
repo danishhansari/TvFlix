@@ -35,16 +35,16 @@ export function sidebar(){
 
     const genreLink = function(){
 
-        for(const [genreId, genreName] of object.entries(genreList)){
-            const link = document.createElement('a');
-            link.classList.add('sidebar-link');
-            link.setAttribute('href',"./movie-list.html");
-            link.setAttribute('menu-close','');
-            link.setAttribute('onclick',`getMovieList("with_genres=${genreId}",${genreId}","${genreName}")`);
+        for(const [genreId, genreName] of Object.entries(genreList)){
+            const link = document.createElement("a");
+            link.classList.add("sidebar-link");
+            link.setAttribute("href","./movie-list.html");
+            link.setAttribute("menu-close","");
+            // link.setAttribute('onclick',`getMovieList("with_genres=${genreId}","${genreName}")`);
             link.textContent= genreName;
             sidebarInner.querySelectorAll(".sidebar-list")[0].appendChild(link);
         }
-        const sidebar= document.querySelector('[sidebar]')
+        const sidebar= document.querySelector("[sidebar]")
         sidebar.appendChild(sidebarInner);
         toggleSidebar(sidebar);
     }
