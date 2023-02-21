@@ -406,12 +406,13 @@ body{
   border-block-start: 1px solid var(--banner-background);
   overflow-y: overlay;
   z-index: 4;
-  visibility: hidden;
+  /* visibility: hidden; */
   transition: var(--transition-long);
+  transform: translateX(0%);
 }
 .sidebar.active{
-  transform: translateX(5px);
-  visibility: visible;
+  /* visibility: visible;  */
+  transform: translateX(-100% );
 }
 .sidebar-inner{
   display: grid;
