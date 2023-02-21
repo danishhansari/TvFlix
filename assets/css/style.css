@@ -410,7 +410,7 @@ body{
   transition: var(--transition-long);
 }
 .sidebar.active{
-  transform: translateX(340px);
+  transform: translateX(5px);
   visibility: visible;
 }
 .sidebar-inner{
