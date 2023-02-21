@@ -702,3 +702,10 @@ body{
 /*-----------------------------------*\
   #MEDIA QUERIES
 \*-----------------------------------*/
+
+
+@media (max-width:768px) {
+  *{
+    -webkit-tap-highlight-color: transparent;
+  }
+}
