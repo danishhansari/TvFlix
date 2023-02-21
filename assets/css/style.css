@@ -271,7 +271,9 @@ body{
   border-radius:var(--radius-8);
 }
 .video-card{
-  background: url('../images/video-bg-icon.png');
+  background: url('../images/video-bg-icon.png'),var(--white-alpha-20);
+  background-repeat: no-repeat;
+  background-position: center;
   aspect-ratio: 16 / 9;
   flex-shrink: 0;
   max-width: 500px;
