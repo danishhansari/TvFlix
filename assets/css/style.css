@@ -3,7 +3,7 @@
 \*-----------------------------------*/
 
 /**
- * copyright 2023 codewithsadee
+ * copyright 2023 Danish
  */
 :root{
 
@@ -139,10 +139,10 @@ body{
   #REUSED STYLE
 \*-----------------------------------*/
 .search-wrapper::before{
+  content: "";
   position: absolute;
   top: 14px;
   right: 12px;
-  content: "";
   width: 20px;
   height: 20px;
   border: 3px solid var(--white);
@@ -263,6 +263,19 @@ body{
 .slider-list .slider-inner::after{
   content: "";
   min-width:4px;
+}
+.separator{
+  width: 4px;
+  height: 4px;
+  background-color: var(--white-alpha-20);
+  border-radius:var(--radius-8);
+}
+.video-card{
+  background: url('../images/video-bg-icon.png');
+  aspect-ratio: 16 / 9;
+  flex-shrink: 0;
+  max-width: 500px;
+  width: calc(100% - 40px);
 }
 
 /*-----------------------------------*\
@@ -563,7 +576,7 @@ body{
     min-width: 200px;
   }
   .movie-card .card-banner {
-    min-width: 100%;
+    min-width: 200px;
   }
   .movie-card .title{
     width: 100%;
@@ -581,13 +594,52 @@ body{
   }
 
 
-  
 /*-----------------------------------*\
   #DETAIL PAGE
 \*-----------------------------------*/
-
-
-
+.backdrop-image{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 600px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+.backdrop-image::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:linear-gradient(0deg, hsla(250, 13%, 11%,1),hsla(250,13%,11%,0.9)) ;
+}
+.movie-detail .movie-poster{
+  max-width: 300px;
+  width: 100%;
+}
+.movie-detail .heading{
+  margin-block: 24px 12px ;
+}
+.movie-detail :is(.meta-list, .genre){
+  color:var(--text-color);
+}
+.movie-detail .genre{
+  margin-block:12px 16px;
+}
+.detail-list{
+  margin-block: 24px 32px;
+}
+.movie-detail .list-item{
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-block-end: 12px;
+}
+.movie-detail .list-name{
+  color: var(--text-color);
+  min-width: 112px;
+}
 
 
 /*-----------------------------------*\
