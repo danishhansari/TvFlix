@@ -407,10 +407,10 @@ body{
   overflow-y: overlay;
   z-index: 4;
   transition: var(--transition-long);
-  transform: translateX(0%);
+  transform: translateX(-100% );
 }
 .sidebar.active{
-  transform: translateX(-100% );
+  transform: translateX(0%);
 }
 .sidebar-inner{
   display: grid;
