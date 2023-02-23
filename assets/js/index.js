@@ -58,17 +58,18 @@ const heroBanner = function ({results:movieList}){
         sliderItem.setAttribute("slider-item","")
 
         sliderItem.innerHTML = `
-        <img src="${imageBaseURL}w1280${backdrop_path}" alt="${title}" class="img-cover" loading=${index === 0 ? "eager" : "lazy"}>
+        <img src="${imageBaseURL}w1280${backdrop_path}" alt="${title}" class="img-cover" loading=${index == 0 ? "eager" : "lazy"}>
+       
         <div class="banner-content">
-        <h2 class="heading">${title}</h2>
+        
+        <h2 class="heading">${title}</h2> 
 
         <div class="meta-list">
             <div class="meta-item">${release_date.split("-")[0]}</div>
             <div class="meta-item card-badge">${vote_average.toFixed(1)}</div>
         </div>
         <p class="genre">${genreList.asString(genre_ids)}</p>
-
-        <p class="banner-text">${overview}</p>
+         <p class="banner-text">${overview}</p>
 
         <a href="./detail.html" class="btn">
         <img src="./assets/images/play_circle.png" width="24" height="24" aria-hidden="true" alt="play circle">
@@ -91,5 +92,28 @@ const heroBanner = function ({results:movieList}){
         banner.querySelector(".control-inner").appendChild(controlItem)
     }
     pageContent.appendChild(banner);
-    // addHeroSlide();
+    addHeroSlide();
+}
+
+const addHeroSlide = function () {
+    // Hero slider
+    const sliderItems = document.querySelectorAll("[slider-item]")
+    const sliderControls = document.querySelectorAll("[slider-control]")
+    let lastSliderItem = sliderItems[0];
+    let lastSliderControl = sliderControls[0]
+
+    lastSliderControl.classList.add("active");
+    lastSliderItem.classList.add("active");
+
+    const sliderStart = function() {
+        lastSliderItem.classList.remove("active")
+        lastSliderControl.classList.remove("active");
+
+        sliderItems[Number(this.getAttribute("slider-control"))].classList.add("active");
+        this.classList.add("active");
+
+        lastSliderItem = sliderItems[Number(this.getAttribute("slider-control"))];
+        lastSliderControl = this;
+    }
+    addEventOnElements(sliderControls,"click",sliderStart)
 }
