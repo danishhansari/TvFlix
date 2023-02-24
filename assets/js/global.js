@@ -1,5 +1,4 @@
 'use strict';
-
 // Add even on multiple element
 const addEventOnElements = function(elements, eventType, callback){
     for(const elem of elements)elem.addEventListener(eventType,callback);

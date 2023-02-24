@@ -2,6 +2,7 @@
 import { api_key, fetchDataFromServer} from './api.js';
 import { sidebar } from './sidebar.js'
 import { createMovieCard } from './movie-card.js';
+import { search } from './search.js';
 
 // collect genre name & url parameter from local storage
 const genreName = window.localStorage.getItem("genreName");
@@ -54,3 +55,5 @@ fetchDataFromServer(`https://api.themoviedb.org/3/discover/movie?api_key=${api_k
     })
 
 })
+
+search();
