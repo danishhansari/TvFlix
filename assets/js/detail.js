@@ -1,12 +1,13 @@
 'use strict';
-import { api_key,imageBaseURL,fetchDataFromServer } from "./api.js";
-import { sidebar } from "./sidebar.js";
 import { createMovieCard } from "./movie-card.js";
+import { sidebar } from "./sidebar.js";
+import { api_key,imageBaseURL,fetchDataFromServer } from "./api.js";
 
-sidebar();
+
 const movieId = window.localStorage.getItem("movieId")
-console.log(movieId);
 const pageContent = document.querySelector("[page-content]")
+
+sidebar()
 
 const getGenres = (genreList) => {
     const newGenreList = [];
@@ -18,7 +19,7 @@ const getGenres = (genreList) => {
 const getCasts = (castList) => {
     const newCastList = [];
     for(let i = 0, len = castList.length; i< len && i < 10; i++){
-        const { name } = cast[i];
+        const { name } = castList[i];
         newCastList.push(name);
     }
     return newCastList.join(", ");

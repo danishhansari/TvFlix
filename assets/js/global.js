@@ -17,5 +17,5 @@ addEventOnElements(searchTogglers,"click",function(){
 // when any movie click card
 
 const getMovieDetail = function(movieId){
-    window.localStorage.setItem("movieId",String(movieId))
+    window.localStorage.setItem("movieId",String(movieId));
 }
