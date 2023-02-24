@@ -18,12 +18,12 @@ export function sidebar(){
   <div class="sidebar-list">
     <p class="title">Language</p>
 
-    <a href="./movie-list.html" menu-close class="sidebar-link" onclick="getMovieList("with_original_language=en","English")">English</a>
+    <a href="./movie-list.html" menu-close class="sidebar-link" onclick='getMovieList("with_original_language=en","English")'>English</a>
 
     <a href="./movie-list.html" menu-close class="sidebar-link" onclick='getMovieList("with_original_language=hi","Hindi")'>Hindi</a>
 
     <a href="./movie-list.html" menu-close class="sidebar-link"
-    onclick='getMovieList("with_original_language=ur",Urdu)'>Urdu</a>
+    onclick='getMovieList("with_original_language=ur","Urdu")'>Urdu</a>
 
   </div>
 
