@@ -28,9 +28,13 @@ export function sidebar(){
   </div>
 
   <div class="sidebar-footer">
-    <p class="copyright">Copywrite 2023<a href="https://twitter.com/danish__an">Danish</a>
+    <p class="copyright"><a href="https://twitter.com/danish__an">Made with ❤️ by Danish</a>
     </p>
-    <img src="./assets/images/tmdb-logo.svg" width="130" height="17" alt="Movie DataBase" />
+    <div class="social-link">
+    <a href="https://twitter.com/danish__an" alt="Social handles" target="_blank">Twitter</a>
+    <a href="https://github.com/danishhansari/danishhansari" alt="Social handles" target="_blank">Github</a>
+    <a href="https://www.instagram.com/danishh_ig/" alt="Social handles" target="_blank">Instagram</a>
+    </div>
   </div>
 `;
 
