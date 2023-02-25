@@ -50,9 +50,9 @@ const heroBanner = function ({results:movieList}){
     banner.innerHTML = `
     <div class="banner-slider"></div>
 
-  <div class="slider-control">
-    <div class="control-inner"></div>
-  </div>
+    <div class="slider-control">
+        <div class="control-inner"></div>
+    </div>
 
     `;
 
